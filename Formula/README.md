@@ -24,6 +24,7 @@ The file MakeNnf  transforms it into:
 ## Nnf
 Formulas in negative normal form
 
+The file index transforms it into:
 ## Indexed
 Each distinct subformula has a unique index. Equal subformulas are
 physically equals.
