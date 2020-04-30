@@ -23,3 +23,7 @@ Next, globally, finally, ... are replaced with their definition.
 The file MakeNnf  transforms it into:
 ## Nnf
 Formulas in negative normal form
+
+## Indexed
+Each distinct subformula has a unique index. Equal subformulas are
+physically equals.
