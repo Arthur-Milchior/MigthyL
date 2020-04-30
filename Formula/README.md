@@ -20,5 +20,6 @@ The file removeUnary transforms it into:
 ## NoUnary
 Next, globally, finally, ... are replaced with their definition.
 
+The file MakeNnf  transforms it into:
 ## Nnf
 Formulas in negative normal form
