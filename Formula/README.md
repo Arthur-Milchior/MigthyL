@@ -29,5 +29,6 @@ The file index transforms it into:
 Each distinct subformula has a unique index. Equal subformulas are
 physically equals.
 
+The file makeImmediate transforms it into:
 ## Atemporal
 Formulas which simply evaluate whether a statement immediatly holds.
