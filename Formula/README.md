@@ -16,5 +16,6 @@ each other.
 ## Input
 That's the type read by the parser.
 
+The file removeUnary transforms it into:
 ## NoUnary
 Next, globally, finally, ... are replaced with their definition.
