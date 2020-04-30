@@ -28,3 +28,6 @@ The file index transforms it into:
 ## Indexed
 Each distinct subformula has a unique index. Equal subformulas are
 physically equals.
+
+## Atemporal
+Formulas which simply evaluate whether a statement immediatly holds.
