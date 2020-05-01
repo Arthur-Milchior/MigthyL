@@ -3,3 +3,6 @@ formatting, instead of a string with new line.
 
 # Select
 Non-deterministic choice made during transitions.
+
+# AssignmentTransition
+Assigment done during a transition.
