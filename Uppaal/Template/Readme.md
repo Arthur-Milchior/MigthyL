@@ -6,3 +6,6 @@ A location, as in a timed automaton.
 
 Most templates have a single location. To be more precise, locations
 are determined by variables.
+
+# Transition
+Transition between locations.
