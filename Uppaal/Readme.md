@@ -15,3 +15,6 @@ to synchronize with other automata.
 # C
 The folder is currently unused. It was an idea I don't want to delete
 immediately.
+
+# Declaration:
+Declarations of variables and functions
