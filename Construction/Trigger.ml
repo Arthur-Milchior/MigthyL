@@ -8,3 +8,8 @@ let triggerredBySomeParent parents fmt ((_, index) as formula) =
 let immediatlyTrue fmt formula =
   fprintf fmt "function immediately_true()@ @[{return %a;@;//Whether the MITL holds simply du to immediate properties.@]}" Atemporal.format
 ;;
+
+
+let reallyTriggered fmt _ =
+  fprint fmt "function really_triggered()@ @[{return@ (!immediately_true())@ &&@ triggered_by_some_parent();@;//Whether we should really trigger this subformula. E.g. a parent trigger it and its not immediately true.@]}"
+;;
