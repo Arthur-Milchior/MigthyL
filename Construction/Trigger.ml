@@ -1,3 +1,7 @@
+let trigger fmt (index_parent, index_child) =
+  fprintf "trigger_%d_%d" index_child index_child
+;;
+
 let triggerredBySomeParent parents fmt ((_, index) as formula) =
   format_concat ~left:"function triggered_by_some_parent()@ @[{return@ @[("
     ~right:"@])@;//Whether some parent triggerred this formula@]}"

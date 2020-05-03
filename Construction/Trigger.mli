@@ -1,3 +1,14 @@
+(** A trigger is a boolean property which indicates that a formulas
+   requires one of its subformula to be true immediately. The
+   automaton of the subformula will ensure that it is indeed the
+   case. It will do so either by ensuring that the formula is
+   immediately true, or by changing its variable so that this
+   automaton accepts in the future only if the property holds
+   immediately. *)
+val trigger :
+  Format.formatter -> (int, int) -> unit
+;;
+
 (** A function declaration returning whether a parent triggered this
    subformula. *)
 val triggerredBySomeParent :
