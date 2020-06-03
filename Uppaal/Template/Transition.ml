@@ -1,4 +1,3 @@
-
 type t = {
     select: Select.ts; (* List of non-deterministic choice to take during this transition. *)
     guard : Guard.t list; (* List of conditions this transition should satisfy. *)

@@ -39,6 +39,42 @@ type t =
 let rec format fmt formula =
   match formula with
     | Nullary op -> format_nullary fmt op
-    | Unary (op, phi) -> fprintf fmt "%a@ @[(%a@])" format_unary op format_aux phi
     | Binary (op, phi, chi) -> fprintf fmt "@[(%a@])@ %a@ @[(%a@])" format_aux phi format_binary op format_aux chi
+;;
+
+
+let atoms formula =
+  let rec aux (pos, neg) = (
+      function
+      | Nullary (Prop at) -> (Atom.set.add pos at, neg)
+      | Nullary (Prop_neg at) -> (pos, Atom.set.add neg at)
+      | Binary (op, phi, psi) -> aux phi (aux psi (pos, neg))
+      | Nullary _ -> (pos, neg)
+    )
+  in aux (Atom.Set.empty, Atom.Set.empty) formula
+;;
+
+(** Replace atoms which appear with a single polarity (always negated
+   or never negated) by true.
+
+The intuition behind it is that if an atom always appear
+   positively/negatively, the formula is satisfiable iff it is
+   satisfiable with this atom being true/false. Since we want to
+   consider satisfiability of formulas, setting it to true does not
+   lose generality. It then allow to ensure that each atom has a
+   negation somewhere in the formula.*)
+let unipolarityToTrue formula =
+  let pos, neg = atoms formula in
+  let rec aux formula = match formula with
+    | Nullary (Prop at) ->
+       if Atom.Set.mem at neg
+       then formula
+       else Nullary True
+    | Nullary (Prop_neg at) ->
+       if Atom.Set.mem at pos
+       then formula
+       else Nullary True
+    | Nullary _ -> formula
+    | Binary (op, phi, psi) ->
+       Binary (op, aux phi, aux psi)
 ;;

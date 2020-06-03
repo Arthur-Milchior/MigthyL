@@ -1,5 +1,10 @@
 open Utils;;
+
 type index = int;;
+
+(** Type of association list, from Nnf Formula to its index*)
+type assoc = [Nnf.t, int];;
+
 type nullary =
   | True
   | False
@@ -19,10 +24,9 @@ type binary=
 
 type t' =
   |Nullary of nullary
-  (* |Unary of unary * t *)
   |Binary of binary * t * t
-and
-t = (t' * index)
+and t =
+  (t' * index)
 ;;
 
 let fals = (Nullary False, -1);;

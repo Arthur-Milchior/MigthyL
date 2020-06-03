@@ -23,3 +23,6 @@ type t =
 (** Formatting as a basic formula. Each temporal operator, apart from
     the root, are replaced by their proposition. *)
 val format : Format.formatter -> t -> unit;;
+
+(** Set of atoms occurring positively and negatively in the formula*)
+val atoms : t -> (Atom.Set.t, Atom.Set.t);;

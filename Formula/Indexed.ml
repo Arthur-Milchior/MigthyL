@@ -1,6 +1,9 @@
 open Utils;;
 open Format;;
+
 type index = int;;
+
+type assoc = [Nnf.t, int];;
 
 type nullary =
   | True

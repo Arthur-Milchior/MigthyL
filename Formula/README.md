@@ -22,7 +22,9 @@ Next, globally, finally, ... are replaced with their definition.
 
 The file MakeNnf  transforms it into:
 ## Nnf
-Formulas in negative normal form
+Formulas in negative normal form. It also contains a function which
+ensures that each atoms which appear in NNF with a single polarity are
+replaced by true.
 
 The file index transforms it into:
 ## Indexed
